@@ -1,6 +1,6 @@
 <template>
     <div id="content-container">
-        <div class="therapist-card col-lg-6" v-for="(therapist, index) in therapists" v-bind:key="index">
+        <div class="therapist-card col-xl-6 col-lg-9 col-md-12" v-for="(therapist, index) in therapists" v-bind:key="index">
             <img :src="therapist.imgLink" alt="therapist picture" class="propic" />
             <div class="therapist-info"> 
                 <p>Name: {{therapist.name}}</p>
@@ -47,8 +47,8 @@ export default {
 }
 
 .therapist-card {
-    margin: 0 auto 20px auto;
     background-color: white;
+    margin: 20px auto;
     display:flex;
 }
 
