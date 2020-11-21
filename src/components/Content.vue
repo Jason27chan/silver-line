@@ -1,8 +1,8 @@
 <template>
     <div id="content-container">
-        <div class="therapist-card" v-for="(therapist, index) in therapists" v-bind:key="index">
+        <div class="therapist-card col-lg-6" v-for="(therapist, index) in therapists" v-bind:key="index">
             <img :src="therapist.imgLink" alt="therapist picture" class="propic" />
-            <div> 
+            <div class="therapist-info"> 
                 <p>Name: {{therapist.name}}</p>
                 <p>Valid Insurance: {{therapist.insurance}}</p>
                 <p>Accepting appointments?: {{therapist.good}}</p>
@@ -42,15 +42,31 @@ export default {
 
 <style scoped>
 #content-container {
-    background-color: #f1fafd;
+    background-color: #f3efef;
     text-align:center;
 }
 
 .therapist-card {
-    margin-top: 20px;
+    margin: 0 auto 20px auto;
+    background-color: white;
+    display:flex;
 }
 
 .propic {
-    max-width:100px;
+    margin-top:.5rem;
+    width:100px;
+    height: 100px;
+    object-fit:cover;
+    border-radius:50%;
 }
+
+.therapist-info {
+    text-align:left;
+    margin-left:30px;
+}
+
+.therapist-info p {
+    margin-bottom: .5rem;
+}
+
 </style>
