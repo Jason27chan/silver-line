@@ -23,7 +23,6 @@ export default {
     async mounted() {
         let response = await superagent.get("http://localhost:3000/getTherapists");
         this.therapists = response.body;
-        console.log(response);
     }
 }
 </script>
