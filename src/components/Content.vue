@@ -12,30 +12,17 @@
 </template>
 
 <script>
+import superagent from 'superagent';
+
 export default {
     data() {
         return {
-            therapists: [
-                {
-                    name: "Drew",
-                    insurance: "blue shield",
-                    good: "yes",
-                    imgLink: "http://www.newdesignfile.com/postpic/2013/07/shutterstock-stock-photography_376128.jpg"
-                },
-                {
-                    name: "Angelina",
-                    insurance: "green shield",
-                    good: "yes",
-                    imgLink: "http://www.newdesignfile.com/postpic/2013/07/free-stock-photos-people_376135.jpg"
-                },
-                {
-                    name: "Frank",
-                    insurance: "purple shield",
-                    good: "yes",
-                    imgLink: "https://101clipart.com/wp-content/uploads/02/Reading%20Child%20Clipart%2002.gif"
-                }
-            ]
+            therapists: []
         }
+    },
+    async mounted() {
+        let response = await superagent.get("http://localhost:3000/getTherapists");
+        this.therapists = response.body;
     }
 }
 </script>
